@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ProTapper extends StatelessWidget {
-  /// To do something on tap using any widgets, wrap your widget inside ProTapper and use onTap function.
   final Widget? child;
   final EdgeInsets? padding;
   final Function onTap;
   final bool? skipTraversal;
 
+  /// To do something on tap using any widgets, wrap your widget inside ProTapper and use onTap function.
   const ProTapper({
     Key? key,
     this.child,

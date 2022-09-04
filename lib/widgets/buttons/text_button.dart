@@ -4,6 +4,19 @@ import 'package:pro_widgets/colors.dart';
 import '../texts/text.dart';
 
 class ProButtonText extends StatelessWidget {
+  final String? text;
+  final double? fontSize;
+  final Color? fontColor;
+  final FontWeight? fontWeight;
+  final double? width;
+  final double? height;
+  final double? borderRadius;
+  final Color? backgroundColor;
+  final double? elevation;
+  final EdgeInsets? padding;
+  final FocusNode? focusNode;
+  final Function function;
+
   /// ProButtonText is a basic text type button made with major parameters that a developer will need. Modify the button in your way, passing values easily.
   const ProButtonText({
     Key? key,
@@ -20,19 +33,6 @@ class ProButtonText extends StatelessWidget {
     this.focusNode,
     required this.function,
   }) : super(key: key);
-
-  final String? text;
-  final double? fontSize;
-  final Color? fontColor;
-  final FontWeight? fontWeight;
-  final double? width;
-  final double? height;
-  final double? borderRadius;
-  final Color? backgroundColor;
-  final double? elevation;
-  final EdgeInsets? padding;
-  final FocusNode? focusNode;
-  final Function function;
 
   @override
   Widget build(BuildContext context) {

@@ -78,7 +78,7 @@ class ProButtonBasic extends StatelessWidget {
           elevation: 0,
           minimumSize: const Size(50, 20),
           padding: padding ?? const EdgeInsets.all(4),
-          primary: backgroundColor ?? ProColors.blueDeep,
+          backgroundColor: backgroundColor ?? ProColors.blueDeep,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
               borderRadius ?? 4,

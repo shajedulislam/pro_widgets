@@ -1,3 +1,7 @@
+## 0.0.3
+
+* Depricated code removed for basic button.
+
 ## 0.0.2
 
 * Example added.

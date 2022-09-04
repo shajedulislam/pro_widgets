@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'ud_widgets',
+      title: 'pro_widgets',
       home: UdWidgetsDemo(),
     );
   }

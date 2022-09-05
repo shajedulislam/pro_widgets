@@ -40,7 +40,6 @@ proBottomSheet({
           alignment: Alignment.bottomCenter,
           child: Container(
             decoration: proBoxDecoration(
-              context: context,
               backgroundColor: sheetBackgroundColor ?? ProColors.white,
               customBorderRadius: customBorderRadius ??
                   const BorderRadius.only(

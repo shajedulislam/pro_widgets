@@ -18,7 +18,7 @@ class ProButtonBasic extends StatelessWidget {
   final BorderRadius? customBorderRadius;
   final Color? borderColor;
   final Color? splashColor;
-  final bool? disableShadow;
+  final bool? enableShadow;
   final Color? shadowColor;
   final Offset? shadowOffset;
   final double? shadowBlurRadius;
@@ -40,7 +40,7 @@ class ProButtonBasic extends StatelessWidget {
     this.backgroundColor,
     this.padding,
     this.focusNode,
-    this.disableShadow,
+    this.enableShadow,
     required this.onTap,
     this.customChild,
     this.borderWidth,
@@ -57,13 +57,10 @@ class ProButtonBasic extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: proBoxDecoration(
-        context: context,
         borderRadius: borderRadius,
         customBorderRadius: customBorderRadius,
         shadowBlurRadius: shadowBlurRadius,
-        disableShadow: disableShadow ?? backgroundColor == Colors.transparent
-            ? true
-            : false,
+        enableShadow: enableShadow,
         shadowOffset: shadowOffset,
         shadowColor: shadowColor,
         shadowSpreadRadius: shadowSpreadRadius,

@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 
 /// Box decoration for widgets like the container etc. is now more easy with proBoxDecoration. Just check parameters and pass values.
 BoxDecoration proBoxDecoration({
-  required BuildContext context,
   Color? backgroundColor,
   double? borderRadius,
   BorderRadius? customBorderRadius,
   Color? borderColor,
   double? borderWidth,
-  bool? disableShadow,
+  bool? enableShadow,
   Color? shadowColor,
   Offset? shadowOffset,
   double? shadowBlurRadius,
@@ -39,7 +38,7 @@ BoxDecoration proBoxDecoration({
         BorderRadius.all(
           Radius.circular(borderRadius ?? 2),
         ),
-    boxShadow: disableShadow != true
+    boxShadow: enableShadow == true
         ? [
             BoxShadow(
               color: shadowColor ?? Colors.black.withOpacity(0.06),

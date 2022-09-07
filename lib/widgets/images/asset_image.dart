@@ -28,7 +28,7 @@ class ProAssetImage extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(
-          Radius.circular(borderRadius ?? 2),
+          Radius.circular(borderRadius ?? 4),
         ),
         image: DecorationImage(
           alignment: imageAlignment ?? Alignment.center,

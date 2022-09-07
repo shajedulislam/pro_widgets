@@ -36,7 +36,7 @@ BoxDecoration proBoxDecoration({
         : null,
     borderRadius: customBorderRadius ??
         BorderRadius.all(
-          Radius.circular(borderRadius ?? 2),
+          Radius.circular(borderRadius ?? 4),
         ),
     boxShadow: enableShadow == true
         ? [

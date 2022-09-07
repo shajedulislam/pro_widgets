@@ -22,47 +22,62 @@ class UdWidgetsDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ProScaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[50],
       appBar: AppBar(
+        elevation: 2,
+        centerTitle: true,
         title: const ProText(
-          text: "AppBar",
+          text: "App Bar",
           fontSize: 16,
           fontWeight: FontWeight.w600,
+          color: Colors.white,
         ),
       ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             children: [
-              const ProGap(y: 20),
-              const ProText(text: "Text"),
-              const ProGap(y: 20),
+              const ProGap(y: 16),
+              const ProText(text: "This is a text"),
+              const ProGap(y: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
                   ProShape(
-                    width: 50,
-                    height: 50,
+                    width: 60,
+                    height: 60,
+                    radius: 30,
                     child: ProText(text: 'Shape', color: Colors.white),
                   ),
                   ProGap(x: 20),
                   ProShape(
-                    width: 50,
-                    height: 50,
+                    width: 60,
+                    height: 60,
                     radius: 4,
-                    child: ProText(text: 'Shape', color: Colors.white),
+                    child: ProText(
+                      text: 'Shape',
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),
-              const ProGap(y: 30),
+              const ProGap(y: 16),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const ProAssetImage(
-                    imagePath: "assets/nature.jpg",
-                    width: 100,
-                    height: 100,
-                    borderRadius: 50,
+                  Container(
+                    decoration: proBoxDecoration(
+                      enableShadow: true,
+                      shadowColor: Colors.blueGrey.withOpacity(0.3),
+                      borderRadius: 50,
+                    ),
+                    child: const ProAssetImage(
+                      imagePath: "assets/sia.jpg",
+                      width: 100,
+                      height: 100,
+                      borderRadius: 50,
+                      boxFit: BoxFit.cover,
+                    ),
                   ),
                   const ProGap(x: 20),
                   ProTapper(
@@ -70,34 +85,45 @@ class UdWidgetsDemo extends StatelessWidget {
                     child: const ProNetworkImage(
                       width: 100,
                       height: 100,
+                      borderRadius: 4,
                       imageUrl: "https://googleflutter.com/sample_image.jpg",
                     ),
                   ),
                 ],
               ),
-              const ProGap(y: 30),
+              const ProGap(y: 16),
               ProCard(
-                width: 315,
-                height: 100,
+                width: 300,
                 borderRadius: 4,
-                backgroundColor: const Color(0xff0077d7),
+                shadowColor: Colors.blueGrey.withOpacity(0.3),
                 child: Align(
                   alignment: Alignment.center,
                   child: Column(
                     children: const [
                       ProText(
                         text: "Card",
-                        fontSize: 20,
-                        color: Colors.white,
+                        fontSize: 18,
+                      ),
+                      ProGap(y: 16),
+                      ProTextField(
+                        width: 200,
+                        height: 40,
+                        hint: "Text Field",
+                      ),
+                      ProGap(y: 16),
+                      ProTextFormField(
+                        width: 200,
+                        height: 40,
+                        hint: "Text Form Field",
                       ),
                     ],
                   ),
                 ),
               ),
-              const ProGap(y: 30),
+              const ProGap(y: 16),
               ProButtonBasic(
                 text: "Button",
-                width: 315,
+                width: 300,
                 borderRadius: 4,
                 onTap: () {},
               ),

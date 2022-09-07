@@ -28,7 +28,7 @@ class ProSvgImage extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(
-          Radius.circular(borderRadius ?? 2),
+          Radius.circular(borderRadius ?? 4),
         ),
       ),
       child: SvgPicture.asset(

@@ -17,13 +17,14 @@ class ProTextFormField extends StatelessWidget {
   final double? labelFontSize;
   final FontWeight? labelFontWeight;
   final String? hint;
-  final Color? hintFontColor;
+  final Color? hintColor;
   final double? hintFontSize;
   final FontWeight? hintFontWeight;
   final Color? errorFontColor;
   final double? errorFontSize;
   final FontWeight? errorFontWeight;
   final Color? borderColor;
+  final double? borderWidth;
   final double? borderRadius;
   final double? paddingHorizontal;
   final double? paddingVertical;
@@ -89,13 +90,14 @@ class ProTextFormField extends StatelessWidget {
     this.labelFontSize,
     this.labelFontWeight,
     this.borderColor,
+    this.borderWidth,
     this.borderRadius,
     this.paddingHorizontal,
     this.paddingVertical,
     this.backgroundColor,
     this.enableShadow,
     this.hint,
-    this.hintFontColor,
+    this.hintColor,
     this.hintFontSize,
     this.hintFontWeight,
     this.errorFontColor,
@@ -154,29 +156,39 @@ class ProTextFormField extends StatelessWidget {
               ),
               filled: true,
               fillColor: Colors.white,
+              border: _prepareBorder(
+                borderRadius: borderRadius ?? 4,
+                color: borderColor ?? ProColors.border,
+                borderWidth: borderWidth ?? 1,
+              ),
               focusedBorder: _prepareBorder(
                 borderRadius: borderRadius ?? 4,
                 color: borderColor ?? ProColors.border,
+                borderWidth: borderWidth ?? 1,
               ),
               disabledBorder: _prepareBorder(
                 borderRadius: borderRadius ?? 4,
                 color: borderColor ?? ProColors.border,
+                borderWidth: borderWidth ?? 1,
               ),
               enabledBorder: _prepareBorder(
                 borderRadius: borderRadius ?? 4,
                 color: borderColor ?? ProColors.border,
+                borderWidth: borderWidth ?? 1,
               ),
               errorBorder: _prepareBorder(
                 borderRadius: borderRadius ?? 4,
                 color: borderColor ?? ProColors.border,
+                borderWidth: borderWidth ?? 1,
               ),
               focusedErrorBorder: _prepareBorder(
                 borderRadius: borderRadius ?? 4,
                 color: borderColor ?? ProColors.border,
+                borderWidth: borderWidth ?? 1,
               ),
-              hintText: hint ?? label,
+              hintText: hint ?? "Hint Text",
               hintStyle: TextStyle(
-                color: hintFontColor ?? ProColors.textLight,
+                color: hintColor ?? ProColors.textLight,
                 fontSize: hintFontSize ?? 14,
                 fontWeight: hintFontWeight ?? FontWeight.w500,
                 overflow: TextOverflow.ellipsis,
@@ -184,8 +196,8 @@ class ProTextFormField extends StatelessWidget {
               hintMaxLines: 2,
               errorStyle: TextStyle(
                 fontSize: errorFontSize ?? 10,
-                color: errorFontColor,
-                fontWeight: errorFontWeight,
+                color: errorFontColor ?? Colors.red,
+                fontWeight: errorFontWeight ?? FontWeight.w400,
                 overflow: TextOverflow.ellipsis,
               ),
               errorMaxLines: 2,
@@ -238,10 +250,16 @@ class ProTextFormField extends StatelessWidget {
   OutlineInputBorder _prepareBorder({
     required Color color,
     required double borderRadius,
+    required double borderWidth,
   }) {
     return OutlineInputBorder(
-      borderSide: BorderSide(color: color),
-      borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
+      borderSide: BorderSide(
+        color: color,
+        width: borderWidth,
+      ),
+      borderRadius: BorderRadius.all(
+        Radius.circular(borderRadius),
+      ),
     );
   }
 

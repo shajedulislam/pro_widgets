@@ -1,3 +1,7 @@
+## 0.0.4
+
+* text input widgets added.
+
 ## 0.0.3
 
 * Depricated code removed for basic button.

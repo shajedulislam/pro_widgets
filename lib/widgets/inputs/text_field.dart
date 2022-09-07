@@ -24,12 +24,14 @@ class ProTextField extends StatelessWidget {
   ///  )
   /// ```
   final int? index;
-  final String? hintText;
-  final Color? hintTextColor;
   final double? fontSize;
   final Color? textColor;
   final TextAlign? textAlignment;
   final FontWeight? fontWeight;
+  final String? hint;
+  final double? hintFontSize;
+  final FontWeight? hintFontWeight;
+  final Color? hintColor;
   final Color? backgroundColor;
   final Color? borderColor;
   final double? borderWidth;
@@ -85,12 +87,14 @@ class ProTextField extends StatelessWidget {
     this.contentPaddingLeft,
     this.contentPaddingRight,
     this.index,
-    this.hintText,
-    this.hintTextColor,
     this.textColor,
     this.fontSize,
     this.fontWeight,
     this.textAlignment,
+    this.hint,
+    this.hintColor,
+    this.hintFontSize,
+    this.hintFontWeight,
     this.obsecureText,
     this.readOnly,
     this.backgroundColor,
@@ -179,11 +183,11 @@ class ProTextField extends StatelessWidget {
                   ),
                 ),
                 filled: false,
-                hintText: hintText ?? "Hint Text",
+                hintText: hint ?? "Hint Text",
                 hintStyle: TextStyle(
-                  color: hintTextColor ?? ProColors.textLight,
-                  fontSize: fontSize ?? 14,
-                  fontWeight: fontWeight ?? FontWeight.w500,
+                  color: hintColor ?? ProColors.textLight,
+                  fontSize: hintFontSize ?? 14,
+                  fontWeight: hintFontWeight ?? FontWeight.w500,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),

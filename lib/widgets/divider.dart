@@ -5,10 +5,16 @@ class ProDivider extends StatelessWidget {
   final Color? color;
   final double? height;
   final double? width;
+  final EdgeInsets? margin;
 
   ///Use this widget if you need a divider. By default the width of the divider is half of the screen width.
-  const ProDivider({Key? key, this.height, this.width, this.color})
-      : super(key: key);
+  const ProDivider({
+    Key? key,
+    this.height,
+    this.width,
+    this.color,
+    this.margin,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +23,7 @@ class ProDivider extends StatelessWidget {
       width: width ?? (MediaQuery.of(context).size.width / 100) * 50,
       height: height ?? 1,
       color: color ?? ProColors.border,
+      margin: margin ?? const EdgeInsets.all(0),
     );
   }
 }

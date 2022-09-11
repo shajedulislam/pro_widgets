@@ -1,3 +1,7 @@
+## 0.0.6
+
+* margin added to proDivider
+
 ## 0.0.5
 
 * text form field onchage dynamic to string

@@ -42,7 +42,7 @@ class ProTextFormField extends StatelessWidget {
   ///   },
   /// )
   /// ```
-  final ValueChanged<dynamic>? onChanged;
+  final ValueChanged<String>? onChanged;
 
   /// Called when the user taps on the text input field and it returns the index value you passed in the widget.
   ///

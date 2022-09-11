@@ -1,3 +1,7 @@
+## 0.0.5
+
+* text form field onchage dynamic to string
+
 ## 0.0.4
 
 * text input widgets added.

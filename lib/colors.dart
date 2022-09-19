@@ -10,6 +10,7 @@ class ProColors {
   static const Color navyMedium = Color.fromRGBO(0, 36, 65, 0.6);
   static const Color navyLight = Color.fromRGBO(0, 36, 65, 0.3);
   static const Color blueDeep = Color(0xff0077d7);
+  static const Color background = Color.fromRGBO(248, 248, 248, 1);
 
   //Border
   static const Color border = Color.fromRGBO(0, 36, 65, 0.08);

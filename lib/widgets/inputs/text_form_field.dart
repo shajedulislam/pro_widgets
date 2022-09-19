@@ -155,7 +155,9 @@ class ProTextFormField extends StatelessWidget {
                 vertical: paddingVertical ?? 0,
               ),
               filled: true,
-              fillColor: Colors.white,
+              fillColor: enabled == true
+                  ? backgroundColor ?? Colors.white
+                  : ProColors.background,
               border: _prepareBorder(
                 borderRadius: borderRadius ?? 4,
                 color: borderColor ?? ProColors.border,
@@ -254,7 +256,7 @@ class ProTextFormField extends StatelessWidget {
   }) {
     return OutlineInputBorder(
       borderSide: BorderSide(
-        color: color,
+        color: enabled == true ? color : ProColors.background,
         width: borderWidth,
       ),
       borderRadius: BorderRadius.all(

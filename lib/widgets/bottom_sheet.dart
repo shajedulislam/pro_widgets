@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:pro_widgets/colors.dart';
 import 'package:pro_widgets/widgets/box_decoration.dart';
@@ -18,6 +20,7 @@ proBottomSheet({
   Color? appBarBackgroundColor,
   Color? sheetBackgroundColor,
   double? sheetHeight,
+  EdgeInsets? sheetMargin,
   BorderRadius? customBorderRadius,
 
   /// If you want to create your own app bar instead of our default sheet app bar then you can pass your design here.
@@ -49,6 +52,10 @@ proBottomSheet({
                     bottomRight: Radius.circular(0),
                   ),
             ),
+            margin: sheetMargin ??
+                EdgeInsets.only(
+                  top: Platform.isIOS ? 50 : 30,
+                ),
             width: double.infinity,
             height: (MediaQuery.of(context).size.height / 100) * 70,
             child: Column(

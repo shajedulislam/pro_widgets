@@ -1,3 +1,7 @@
+## 0.0.7
+
+* margin added to proBottomSheet
+
 ## 0.0.6
 
 * margin added to proDivider

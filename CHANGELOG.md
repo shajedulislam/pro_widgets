@@ -1,6 +1,10 @@
-## 0.0.7
+## 0.0.8
 
 * margin added to proBottomSheet
+
+## 0.0.7
+
+* text form field fill color updated
 
 ## 0.0.6
 

@@ -68,7 +68,7 @@ class ProButtonBasic extends StatelessWidget {
         borderColor: borderColor ?? Colors.transparent,
         borderWidth: borderWidth ?? 0,
       ),
-      width: width ?? double.infinity,
+      width: width ?? 100,
       height: height ?? 45,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(

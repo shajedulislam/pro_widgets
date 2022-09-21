@@ -1,3 +1,7 @@
+## 0.0.9
+
+* sheet height and Appbar title color added to proBottomSheet
+
 ## 0.0.8
 
 * margin added to proBottomSheet

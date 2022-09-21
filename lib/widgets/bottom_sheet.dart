@@ -34,7 +34,7 @@ proBottomSheet({
 }) {
   return showModalBottomSheet(
     context: context,
-    isScrollControlled: true,
+    isScrollControlled: isScrollControlled ?? false,
     backgroundColor: Colors.transparent,
     builder: (_) {
       return Scaffold(
@@ -57,7 +57,8 @@ proBottomSheet({
                   top: Platform.isIOS ? 50 : 30,
                 ),
             width: double.infinity,
-            height: (MediaQuery.of(context).size.height / 100) * 70,
+            height:
+                sheetHeight ?? (MediaQuery.of(context).size.height / 100) * 70,
             child: Column(
               children: [
                 ClipRRect(
@@ -81,6 +82,7 @@ proBottomSheet({
                             ProText(
                               text: appBarTitle ?? "Title",
                               fontSize: appBarTitleSize ?? 16,
+                              color: appBarTitleColor ?? ProColors.textDeep,
                               fontWeight: appBarTitleWeight ?? FontWeight.w700,
                             ),
                             InkWell(

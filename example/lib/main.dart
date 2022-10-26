@@ -107,13 +107,13 @@ class UdWidgetsDemo extends StatelessWidget {
                       ProGap(y: 16),
                       ProTextField(
                         width: 200,
-                        height: 40,
+                        height: 45,
                         hint: "Text Field",
                       ),
                       ProGap(y: 16),
                       ProTextFormField(
                         width: 200,
-                        height: 40,
+                        paddingVertical: 14,
                         hint: "Text Form Field",
                       ),
                     ],

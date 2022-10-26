@@ -7,7 +7,6 @@ import '../box_decoration.dart';
 class ProTextFormField extends StatelessWidget {
   final int? index;
   final double? width;
-  final double? height;
   final TextEditingController? controller;
   final Color? fontColor;
   final double? fontSize;
@@ -80,7 +79,6 @@ class ProTextFormField extends StatelessWidget {
     Key? key,
     this.index,
     this.width,
-    this.height,
     this.controller,
     this.fontColor,
     this.fontSize,
@@ -139,7 +137,6 @@ class ProTextFormField extends StatelessWidget {
             : const SizedBox.shrink(),
         Container(
           width: width,
-          height: height ?? 45,
           decoration: proBoxDecoration(
             enableShadow: enableShadow,
             borderRadius: borderRadius,
@@ -150,9 +147,10 @@ class ProTextFormField extends StatelessWidget {
             key: key,
             controller: controller,
             decoration: InputDecoration(
+              isDense: true,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: paddingHorizontal ?? 0,
-                vertical: paddingVertical ?? 0,
+                vertical: paddingVertical ?? 16.5,
               ),
               filled: true,
               fillColor: enabled == true

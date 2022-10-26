@@ -1,3 +1,7 @@
+## 0.0.10
+
+* height removed from ProTextFormField
+
 ## 0.0.9
 
 * sheet height and Appbar title color added to proBottomSheet

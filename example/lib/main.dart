@@ -127,6 +127,9 @@ class UdWidgetsDemo extends StatelessWidget {
                 borderRadius: 4,
                 onTap: () {},
               ),
+              ProAlertClassic(
+                title: "Title",
+              )
             ],
           ),
         ),

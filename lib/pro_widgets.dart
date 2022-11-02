@@ -16,3 +16,4 @@ export 'package:pro_widgets/widgets/gap.dart';
 export 'package:pro_widgets/widgets/box_decoration.dart';
 export 'package:pro_widgets/widgets/inputs/text_field.dart';
 export 'package:pro_widgets/widgets/inputs/text_form_field.dart';
+export 'package:pro_widgets/widgets/alert.dart';

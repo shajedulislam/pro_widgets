@@ -1,3 +1,7 @@
+## 0.0.11
+
+* ProAlertClassic added
+
 ## 0.0.10
 
 * height removed from ProTextFormField

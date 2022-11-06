@@ -40,6 +40,8 @@ Default values or sizes used in pro widgets are not responsive. For responsivene
 
 - ProScaffold
 
+- ProAlertClassic
+
 ## Functions
 
 - proBoxDecoration()

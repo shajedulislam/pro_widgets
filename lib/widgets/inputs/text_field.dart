@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:pro_widgets/colors.dart';
 import 'package:pro_widgets/pro_widgets.dart';
 
+import '../../responsiveness/responsive.dart';
+
 class ProTextField extends StatelessWidget {
   final double? height;
   final double? width;
@@ -120,14 +122,15 @@ class ProTextField extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    double design = doNotUseThisDesignValue(context: context);
     return Container(
-      height: height ?? 45,
+      height: height ?? design * 45,
       width: width,
       decoration: proBoxDecoration(
         enableShadow: enableShadow,
-        borderRadius: borderRadius,
+        borderRadius: borderRadius ?? design * 4,
         borderColor: borderColor ?? ProColors.border,
-        borderWidth: borderWidth,
+        borderWidth: borderWidth ?? design * 1,
         backgroundColor: backgroundColor ?? ProColors.white,
       ),
       child: Row(
@@ -165,8 +168,8 @@ class ProTextField extends StatelessWidget {
               textAlign: textAlignment ?? TextAlign.start,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.only(
-                  left: contentPaddingLeft ?? 8,
-                  right: contentPaddingRight ?? 8,
+                  left: contentPaddingLeft ?? design * 8,
+                  right: contentPaddingRight ?? design * 8,
                 ),
                 enabledBorder: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(0)),

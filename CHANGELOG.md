@@ -1,3 +1,7 @@
+## 0.0.12
+
+* ProAlertClassic bug fixed
+
 ## 0.0.11
 
 * ProAlertClassic added

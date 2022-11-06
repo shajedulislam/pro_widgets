@@ -94,7 +94,6 @@ class UdWidgetsDemo extends StatelessWidget {
               const ProGap(y: 16),
               ProCard(
                 width: 300,
-                borderRadius: 4,
                 shadowColor: Colors.blueGrey.withOpacity(0.3),
                 child: Align(
                   alignment: Alignment.center,

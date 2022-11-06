@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pro_widgets/colors.dart';
 
+import '../responsiveness/responsive.dart';
+
 class ProDivider extends StatelessWidget {
   final Color? color;
   final double? height;
@@ -18,10 +20,11 @@ class ProDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double design = doNotUseThisDesignValue(context: context);
     return Container(
       key: key,
       width: width ?? (MediaQuery.of(context).size.width / 100) * 50,
-      height: height ?? 1,
+      height: height ?? design * 1,
       color: color ?? ProColors.border,
       margin: margin ?? const EdgeInsets.all(0),
     );

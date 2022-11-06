@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../responsiveness/responsive.dart';
+
 class ProCard extends StatelessWidget {
   final double? width;
   final double? height;
@@ -67,11 +69,12 @@ class ProCard extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    double design = doNotUseThisDesignValue(context: context);
     return Container(
       key: key,
       width: width,
       height: height,
-      padding: padding ?? const EdgeInsets.all(16),
+      padding: padding ?? EdgeInsets.all(design * 16),
       margin: margin ?? const EdgeInsets.all(0),
       decoration: BoxDecoration(
         color: gradientEnable != true ? backgroundColor ?? Colors.white : null,
@@ -94,14 +97,16 @@ class ProCard extends StatelessWidget {
             : null,
         borderRadius: customBorderRadius ??
             BorderRadius.all(
-              Radius.circular(borderRadius ?? 2),
+              Radius.circular(
+                borderRadius ?? design * 4,
+              ),
             ),
         boxShadow: disableShadow != true
             ? [
                 BoxShadow(
                   color: shadowColor ?? Colors.black.withOpacity(0.05),
-                  offset: shadowOffset ?? const Offset(0, 1),
-                  blurRadius: shadowBlurRadius ?? 2,
+                  offset: shadowOffset ?? Offset(0, design * 1),
+                  blurRadius: shadowBlurRadius ?? design * 2,
                   spreadRadius: shadowSpreadRadius ?? 0,
                 ),
               ]

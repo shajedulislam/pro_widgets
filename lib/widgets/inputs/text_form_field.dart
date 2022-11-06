@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pro_widgets/colors.dart';
 
+import '../../responsiveness/responsive.dart';
 import '../box_decoration.dart';
 
 class ProTextFormField extends StatelessWidget {
@@ -124,6 +125,7 @@ class ProTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double design = doNotUseThisDesignValue(context: context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -150,41 +152,41 @@ class ProTextFormField extends StatelessWidget {
               isDense: true,
               contentPadding: EdgeInsets.symmetric(
                 horizontal: paddingHorizontal ?? 0,
-                vertical: paddingVertical ?? 16.5,
+                vertical: paddingVertical ?? design * 14,
               ),
               filled: true,
               fillColor: enabled == true
                   ? backgroundColor ?? Colors.white
                   : ProColors.background,
               border: _prepareBorder(
-                borderRadius: borderRadius ?? 4,
+                borderRadius: borderRadius ?? design * 4,
                 color: borderColor ?? ProColors.border,
-                borderWidth: borderWidth ?? 1,
+                borderWidth: borderWidth ?? design * 1,
               ),
               focusedBorder: _prepareBorder(
-                borderRadius: borderRadius ?? 4,
+                borderRadius: borderRadius ?? design * 4,
                 color: borderColor ?? ProColors.border,
-                borderWidth: borderWidth ?? 1,
+                borderWidth: borderWidth ?? design * 1,
               ),
               disabledBorder: _prepareBorder(
-                borderRadius: borderRadius ?? 4,
+                borderRadius: borderRadius ?? design * 4,
                 color: borderColor ?? ProColors.border,
-                borderWidth: borderWidth ?? 1,
+                borderWidth: borderWidth ?? design * 1,
               ),
               enabledBorder: _prepareBorder(
-                borderRadius: borderRadius ?? 4,
+                borderRadius: borderRadius ?? design * 4,
                 color: borderColor ?? ProColors.border,
-                borderWidth: borderWidth ?? 1,
+                borderWidth: borderWidth ?? design * 1,
               ),
               errorBorder: _prepareBorder(
-                borderRadius: borderRadius ?? 4,
+                borderRadius: borderRadius ?? design * 4,
                 color: borderColor ?? ProColors.border,
-                borderWidth: borderWidth ?? 1,
+                borderWidth: borderWidth ?? design * 1,
               ),
               focusedErrorBorder: _prepareBorder(
-                borderRadius: borderRadius ?? 4,
+                borderRadius: borderRadius ?? design * 4,
                 color: borderColor ?? ProColors.border,
-                borderWidth: borderWidth ?? 1,
+                borderWidth: borderWidth ?? design * 1,
               ),
               hintText: hint ?? "Hint Text",
               hintStyle: TextStyle(
@@ -203,13 +205,13 @@ class ProTextFormField extends StatelessWidget {
               errorMaxLines: 2,
               prefixIcon: prefix ?? const SizedBox.shrink(),
               prefixIconConstraints: BoxConstraints(
-                minWidth: prefixSize?.width ?? 10,
-                minHeight: prefixSize?.height ?? 10,
+                minWidth: prefixSize?.width ?? design * 10,
+                minHeight: prefixSize?.height ?? design * 10,
               ),
               suffixIcon: suffix ?? const SizedBox.shrink(),
               suffixIconConstraints: BoxConstraints(
-                minWidth: suffixSize?.width ?? 1,
-                minHeight: suffixSize?.height ?? 1,
+                minWidth: suffixSize?.width ?? design * 1,
+                minHeight: suffixSize?.height ?? design * 1,
               ),
               enabled: enabled,
             ),

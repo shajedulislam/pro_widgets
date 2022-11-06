@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pro_widgets/colors.dart';
 
+import '../../responsiveness/responsive.dart';
 import '../box_decoration.dart';
 import '../texts/text.dart';
 
@@ -55,6 +56,7 @@ class ProButtonBasic extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double design = doNotUseThisDesignValue(context: context);
     return Container(
       decoration: proBoxDecoration(
         borderRadius: borderRadius,
@@ -68,17 +70,17 @@ class ProButtonBasic extends StatelessWidget {
         borderColor: borderColor ?? Colors.transparent,
         borderWidth: borderWidth ?? 0,
       ),
-      width: width ?? 100,
-      height: height ?? 45,
+      width: width ?? design * 100,
+      height: height ?? design * 45,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           elevation: 0,
-          minimumSize: const Size(50, 20),
-          padding: padding ?? const EdgeInsets.all(4),
+          minimumSize: Size(design * 50, design * 20),
+          padding: padding ?? EdgeInsets.all(design * 4),
           backgroundColor: backgroundColor ?? ProColors.blueDeep,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
-              borderRadius ?? 4,
+              borderRadius ?? design * 4,
             ),
           ),
           shadowColor: Colors.transparent,

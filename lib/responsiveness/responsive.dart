@@ -11,3 +11,7 @@ double doNotUseThisDesignValue({required BuildContext context}) {
 double doNotUseThisHorizontalValue({required BuildContext context}) {
   return (MediaQuery.of(context).size.width / 100);
 }
+
+double doNotUseThisVerticalValue({required BuildContext context}) {
+  return (MediaQuery.of(context).size.height / 100);
+}

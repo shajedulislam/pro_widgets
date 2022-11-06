@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:pro_widgets/colors.dart';
-import 'package:pro_widgets/pro_widgets.dart';
 
 import '../responsiveness/responsive.dart';
 
@@ -72,15 +71,19 @@ class ProAlertClassic extends StatelessWidget {
               ),
             )
           : const SizedBox.shrink(),
-      content: ProCard(
-        width: width,
-        height: height,
+      content: Container(
+        width: design * 80,
         padding: const EdgeInsets.all(0),
-        customBorderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(alertBorderRadius ?? design * 4),
-          bottomRight: Radius.circular(alertBorderRadius ?? design * 4),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(alertBorderRadius ?? design * 4),
+            bottomRight: Radius.circular(alertBorderRadius ?? design * 4),
+          ),
         ),
-        child: Column(
+        child: ListView(
+          padding: const EdgeInsets.all(0),
+          physics: const ClampingScrollPhysics(),
+          shrinkWrap: true,
           children: <Widget>[
             Container(
               alignment: Alignment.center,

@@ -101,13 +101,14 @@ class ProAlertClassic extends StatelessWidget {
                 style: TextStyle(
                   color: ProColors.navyDeep,
                   fontSize: messageFontSize ?? 16,
+                  fontWeight: FontWeight.w500,
                 ),
                 textAlign: TextAlign.center,
               ),
             ),
             Container(
               width: double.infinity,
-              height: 1,
+              height: design * 1,
               color: Colors.black12,
             ),
             SizedBox(
@@ -139,7 +140,7 @@ class ProAlertClassic extends StatelessWidget {
                   button2Text != null
                       ? Container(
                           height: double.infinity,
-                          width: 1,
+                          width: design * 1,
                           color: Colors.black12,
                         )
                       : const SizedBox.shrink(),
@@ -152,8 +153,9 @@ class ProAlertClassic extends StatelessWidget {
                             splashColor: Colors.transparent,
                             onTap: button2Function as void Function()?,
                             child: Container(
-                              padding:
-                                  EdgeInsets.symmetric(horizontal: design * 10),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: design * 10,
+                              ),
                               height: double.infinity,
                               alignment: Alignment.center,
                               child: Text(

@@ -59,6 +59,7 @@ class ProTextField extends StatelessWidget {
   /// )
   /// ```
   final ValueChanged<dynamic>? onChanged;
+  final ValueChanged<dynamic>? onSubmitted;
   final Function? onTap;
   final Function? onEditingComplete;
 
@@ -113,6 +114,7 @@ class ProTextField extends StatelessWidget {
     this.onChanged,
     this.onTap,
     this.onEditingComplete,
+    this.onSubmitted,
     this.getIndex,
     this.controller,
     this.focusNode,
@@ -154,6 +156,16 @@ class ProTextField extends StatelessWidget {
                 }
               },
               controller: controller,
+              onSubmitted: (String text) {
+                if (onSubmitted != null) {
+                  onSubmitted!(text);
+                }
+              },
+              onEditingComplete: () {
+                if (onEditingComplete != null) {
+                  onEditingComplete!();
+                }
+              },
               textInputAction: textInputAction ?? TextInputAction.next,
               readOnly: readOnly ?? false,
               focusNode: focusNode,

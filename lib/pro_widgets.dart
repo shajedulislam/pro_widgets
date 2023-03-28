@@ -4,6 +4,7 @@ export 'package:pro_widgets/widgets/scaffold.dart';
 export 'package:pro_widgets/widgets/buttons/basic_button.dart';
 export 'package:pro_widgets/widgets/buttons/text_button.dart';
 export 'package:pro_widgets/widgets/buttons/tapper.dart';
+export 'package:pro_widgets/widgets/buttons/radio.dart';
 export 'package:pro_widgets/widgets/bottom_sheet.dart';
 export 'package:pro_widgets/widgets/texts/text.dart';
 export 'package:pro_widgets/widgets/card.dart';

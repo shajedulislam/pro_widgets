@@ -5,6 +5,7 @@ import '../../responsiveness/responsive.dart';
 
 class ProRadioButton extends StatelessWidget {
   final double? size;
+  final Color? radioColor;
   final double? radioTitleGap;
 
   /// It makes space inside when button is checked
@@ -85,6 +86,7 @@ class ProRadioButton extends StatelessWidget {
   const ProRadioButton({
     super.key,
     this.size,
+    this.radioColor,
     this.radioTitleGap,
     this.innerMargin,
     this.borderRadius,
@@ -127,7 +129,7 @@ class ProRadioButton extends StatelessWidget {
               width: size ?? design * 16,
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: ProColors.blueDeep,
+                  color: radioColor ?? ProColors.blueDeep,
                 ),
                 borderRadius: BorderRadius.all(
                   Radius.circular(
@@ -142,8 +144,9 @@ class ProRadioButton extends StatelessWidget {
               child: Container(
                 margin: EdgeInsets.all(innerMargin ?? design * 2),
                 decoration: BoxDecoration(
-                  color:
-                      checked == true ? ProColors.blueDeep : Colors.transparent,
+                  color: checked == true
+                      ? radioColor ?? ProColors.blueDeep
+                      : Colors.transparent,
                   borderRadius: BorderRadius.all(
                     Radius.circular(
                       borderRadius != null

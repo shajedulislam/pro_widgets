@@ -1,10 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:pro_widgets/colors.dart';
 import 'package:pro_widgets/widgets/box_decoration.dart';
 
-import 'images/svg_image.dart';
 import 'texts/text.dart';
 
 /// proBottomSheet is a basic bottom sheet made with major needs by default. You can save your time by using this basic bottom sheet.
@@ -25,7 +23,7 @@ proBottomSheet({
 
   /// If you want to create your own app bar instead of our default sheet app bar then you can pass your design here.
   Widget? customAppBar,
-  Size? appBarCloseIconSize,
+  double? appBarCloseIconSize,
   Color? appBarCloseIconColor,
 
   /// We tried to create a basic bottom sheet with major needs. You can just pass your body here and use it to save some time.
@@ -43,7 +41,7 @@ proBottomSheet({
           alignment: Alignment.bottomCenter,
           child: Container(
             decoration: proBoxDecoration(
-              backgroundColor: sheetBackgroundColor ?? ProColors.white,
+              backgroundColor: sheetBackgroundColor ?? Colors.white,
               customBorderRadius: customBorderRadius ??
                   const BorderRadius.only(
                     topLeft: Radius.circular(12),
@@ -60,6 +58,7 @@ proBottomSheet({
             height:
                 sheetHeight ?? (MediaQuery.of(context).size.height / 100) * 70,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ClipRRect(
                   borderRadius: customBorderRadius ??
@@ -71,7 +70,7 @@ proBottomSheet({
                       ),
                   child: customAppBar ??
                       Container(
-                        color: appBarBackgroundColor ?? ProColors.white,
+                        color: appBarBackgroundColor ?? Colors.white,
                         height: appBarHeight ?? 50,
                         width: double.infinity,
                         padding: appBarPadding ??
@@ -82,7 +81,7 @@ proBottomSheet({
                             ProText(
                               text: appBarTitle ?? "Title",
                               fontSize: appBarTitleSize ?? 16,
-                              color: appBarTitleColor ?? ProColors.textDeep,
+                              color: appBarTitleColor ?? Colors.black,
                               fontWeight: appBarTitleWeight ?? FontWeight.w700,
                             ),
                             InkWell(
@@ -91,17 +90,10 @@ proBottomSheet({
                                   onAppBarCloseIconTap();
                                 }
                               },
-                              child: ProSvgImage(
-                                imagePath:
-                                    "assets/icons/ic_close_round_filled.svg",
-                                width: appBarCloseIconSize != null
-                                    ? appBarCloseIconSize.width
-                                    : 24,
-                                height: appBarCloseIconSize != null
-                                    ? appBarCloseIconSize.height
-                                    : 24,
-                                color: appBarCloseIconColor ??
-                                    ProColors.navyMedium,
+                              child: Icon(
+                                Icons.close_rounded,
+                                color: appBarCloseIconColor ?? Colors.black,
+                                size: appBarCloseIconSize ?? 24,
                               ),
                             )
                           ],

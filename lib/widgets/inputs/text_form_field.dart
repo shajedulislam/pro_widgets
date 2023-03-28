@@ -24,10 +24,13 @@ class ProTextFormField extends StatelessWidget {
   final double? errorFontSize;
   final FontWeight? errorFontWeight;
   final Color? borderColor;
+  final Color? borderColorFocused;
+  final Color? borderColorError;
   final double? borderWidth;
   final double? borderRadius;
   final double? paddingHorizontal;
   final double? paddingVertical;
+  final bool? filled;
   final Color? backgroundColor;
   final bool? enableShadow;
   final FormFieldValidator<dynamic>? validator;
@@ -67,6 +70,7 @@ class ProTextFormField extends StatelessWidget {
   final TextInputType keyboardType;
   final bool enabled;
   final int maxLines;
+  final FocusNode? focusNode;
   final VoidCallback? onTap;
   final AutovalidateMode autovalidateMode;
   final void Function(String?)? onSaved;
@@ -89,10 +93,13 @@ class ProTextFormField extends StatelessWidget {
     this.labelFontSize,
     this.labelFontWeight,
     this.borderColor,
+    this.borderColorFocused,
+    this.borderColorError,
     this.borderWidth,
     this.borderRadius,
     this.paddingHorizontal,
     this.paddingVertical,
+    this.filled = true,
     this.backgroundColor,
     this.enableShadow,
     this.hint,
@@ -114,6 +121,7 @@ class ProTextFormField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.enabled = true,
     this.maxLines = 1,
+    this.focusNode,
     this.onTap,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.textInputAction,
@@ -147,6 +155,7 @@ class ProTextFormField extends StatelessWidget {
           ),
           child: TextFormField(
             key: key,
+            focusNode: focusNode,
             controller: controller,
             decoration: InputDecoration(
               isDense: true,
@@ -154,7 +163,7 @@ class ProTextFormField extends StatelessWidget {
                 horizontal: paddingHorizontal ?? 0,
                 vertical: paddingVertical ?? design * 14,
               ),
-              filled: true,
+              filled: filled,
               fillColor: enabled == true
                   ? backgroundColor ?? Colors.white
                   : ProColors.background,
@@ -165,7 +174,7 @@ class ProTextFormField extends StatelessWidget {
               ),
               focusedBorder: _prepareBorder(
                 borderRadius: borderRadius ?? design * 4,
-                color: borderColor ?? ProColors.border,
+                color: borderColorFocused ?? borderColor ?? ProColors.border,
                 borderWidth: borderWidth ?? design * 1,
               ),
               disabledBorder: _prepareBorder(
@@ -180,7 +189,7 @@ class ProTextFormField extends StatelessWidget {
               ),
               errorBorder: _prepareBorder(
                 borderRadius: borderRadius ?? design * 4,
-                color: borderColor ?? ProColors.border,
+                color: borderColorError ?? borderColor ?? ProColors.border,
                 borderWidth: borderWidth ?? design * 1,
               ),
               focusedErrorBorder: _prepareBorder(

@@ -124,7 +124,14 @@ class UdWidgetsDemo extends StatelessWidget {
                 text: "Button",
                 width: 300,
                 borderRadius: 4,
-                onTap: () {},
+                onTap: () {
+                  proBottomSheet(
+                    context: context,
+                    appBarTitle: "AppBar",
+                    isScrollControlled: true,
+                    sheetBody: const SizedBox.shrink(),
+                  );
+                },
               ),
               const ProAlertClassic(title: "Title")
             ],

@@ -27,7 +27,7 @@ class ProTextField extends StatelessWidget {
   /// ```
   final int? index;
   final double? fontSize;
-  final Color? textColor;
+  final Color? fontColor;
   final TextAlign? textAlignment;
   final FontWeight? fontWeight;
   final String? hint;
@@ -90,7 +90,7 @@ class ProTextField extends StatelessWidget {
     this.contentPaddingLeft,
     this.contentPaddingRight,
     this.index,
-    this.textColor,
+    this.fontColor,
     this.fontSize,
     this.fontWeight,
     this.textAlignment,
@@ -175,7 +175,7 @@ class ProTextField extends StatelessWidget {
               style: TextStyle(
                 fontSize: fontSize ?? 16,
                 fontWeight: fontWeight ?? FontWeight.normal,
-                color: textColor ?? ProColors.textDeep,
+                color: fontColor ?? ProColors.textDeep,
               ),
               textAlign: textAlignment ?? TextAlign.start,
               decoration: InputDecoration(

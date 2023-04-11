@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ProSvgImage extends StatelessWidget {
+class ProSvgURL extends StatelessWidget {
   final double height;
   final double width;
   final String imagePath;
@@ -10,8 +10,8 @@ class ProSvgImage extends StatelessWidget {
   final Alignment? imageAlignment;
   final double? borderRadius;
 
-  /// Using svg images are now more easy with ProSvgImage. Just check parameters and pass values.
-  const ProSvgImage({
+  /// Using svg URL images are now more easy with ProSvgURL. Just check parameters and pass values.
+  const ProSvgURL({
     Key? key,
     required this.height,
     required this.width,
@@ -28,12 +28,11 @@ class ProSvgImage extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(
-          Radius.circular(borderRadius ?? 4),
+          Radius.circular(borderRadius ?? 0),
         ),
       ),
-      child: SvgPicture.asset(
+      child: SvgPicture.network(
         imagePath,
-        color: color,
         fit: boxFit ?? BoxFit.contain,
         alignment: imageAlignment ?? Alignment.center,
         height: height,

@@ -1,3 +1,7 @@
+## 0.0.22
+
+- Dart 3 support
+
 ## 0.0.21
 
 - ProSvgURL added to support URL SVG

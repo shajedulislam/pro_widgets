@@ -40,9 +40,9 @@ class UdWidgetsDemo extends StatelessWidget {
               const ProGap(y: 16),
               const ProText(text: "This is a text"),
               const ProGap(y: 16),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   ProShape(
                     width: 60,
                     height: 60,
@@ -95,10 +95,10 @@ class UdWidgetsDemo extends StatelessWidget {
               ProCard(
                 width: 300,
                 shadowColor: Colors.blueGrey.withOpacity(0.3),
-                child: Align(
+                child: const Align(
                   alignment: Alignment.center,
                   child: Column(
-                    children: const [
+                    children: [
                       ProText(
                         text: "Card",
                         fontSize: 18,

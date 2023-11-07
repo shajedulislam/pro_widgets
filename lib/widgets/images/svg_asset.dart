@@ -33,7 +33,6 @@ class ProSvgAsset extends StatelessWidget {
       ),
       child: SvgPicture.asset(
         imagePath,
-        color: color,
         fit: boxFit ?? BoxFit.contain,
         alignment: imageAlignment ?? Alignment.center,
         height: height,

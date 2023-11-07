@@ -1,17 +1,17 @@
 name: pro_widgets
 description: Collection of simplified widgets that will make your application development easy and faster.
-version: 0.0.21
+version: 0.0.22
 homepage: https://github.com/shajedulislam/pro_widgets
 
 environment:
-  sdk: ">=2.17.6 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=2.17.6 <4.0.0"
+  flutter: ">=3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  flutter_svg: ^2.0.5
+  flutter_svg: ^2.0.9
 
 dev_dependencies:
   flutter_test:
